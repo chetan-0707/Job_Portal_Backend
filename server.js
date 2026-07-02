@@ -42,10 +42,10 @@ app.get('*',(_,res)=>{
 })
 // "http://localhost:8000/api/v1/user/register"
 
-app.listen(PORT,()=>{
-    connectDB();
-    console.log(`Server running at port ${PORT}`);
-})
+// app.listen(PORT,()=>{
+//     connectDB();
+//     console.log(`Server running at port ${PORT}`);
+// })
 
 
 module.exports = app;
