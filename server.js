@@ -12,6 +12,7 @@ import path from "path";
 dotenv.config({});
 
 const app = express();
+const serverless = require("serverless-http");
 
 const _dirname = path.resolve();
 
@@ -26,7 +27,7 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-const PORT = process.env.PORT || 3000;
+// const PORT = process.env.PORT || 3000;
 
 
 // api's
@@ -45,3 +46,7 @@ app.listen(PORT,()=>{
     connectDB();
     console.log(`Server running at port ${PORT}`);
 })
+
+
+module.exports = app;
+module.exports.handler = serverless(app);
